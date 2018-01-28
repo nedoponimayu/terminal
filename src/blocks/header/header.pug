@@ -1,0 +1,40 @@
+-
+	var list = [
+		"/assets/i/1-icon.png",
+		"/assets/i/2-icon.png",
+		"/assets/i/3-icon.png",
+		"/assets/i/4-icon.png",
+		"/assets/i/5-icon.png",
+		"/assets/i/6-icon.png",
+		"/assets/i/7-icon.png",
+		"/assets/i/8-icon.png"
+		]
+
+-
+	var pics = [
+		"Автотранспорт",
+		"Будівництво, архітектура, землекористування",
+		"Громадянство",
+		"Захист прав дитини",
+		"Реєстрація місця проживання/перебування",
+		"Підприємницька діяльність",
+		"Санітарне та епідемічне благополуччя, ветеринарна медицина",
+		"Комунальне господарство"
+		]
+
+mixin header()
+	.topper
+		.header
+			.iconHeader
+			.title
+				p Центр надання адміністративних послуг
+	.blocktitle
+		p Виберіть категорію
+
+mixin main()
+	.wrapper
+		-for (var x = 0; x < 8; x++)
+			.block
+				img(src=list[x])
+				p #{pics[x]}
+
