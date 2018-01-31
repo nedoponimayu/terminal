@@ -1,26 +1,39 @@
 -
-	var list = [
-		"/assets/i/1-icon.png",
-		"/assets/i/2-icon.png",
-		"/assets/i/3-icon.png",
-		"/assets/i/4-icon.png",
-		"/assets/i/5-icon.png",
-		"/assets/i/6-icon.png",
-		"/assets/i/7-icon.png",
-		"/assets/i/8-icon.png"
-		]
-
--
-	var pics = [
-		"Автотранспорт",
-		"Будівництво, архітектура, землекористування",
-		"Громадянство",
-		"Захист прав дитини",
-		"Реєстрація місця проживання/перебування",
-		"Підприємницька діяльність",
-		"Санітарне та епідемічне благополуччя, ветеринарна медицина",
-		"Комунальне господарство"
-		]
+	var dataList =
+	[
+		{
+			img: "/assets/i/1-icon.png",
+			title: "Автотранспорт" 
+		},
+		{
+			img: "/assets/i/2-icon.png",
+			title: "Будівництво, архітектура, землекористування" 
+		},
+		{
+			img: "/assets/i/3-icon.png",
+			title: "Громадянство"
+		},
+		{
+			img: "/assets/i/4-icon.png",
+			title: "Захист прав дитини"
+		},
+		{
+			img: "/assets/i/5-icon.png",
+			title: "Реєстрація місця проживання/перебування"
+		},
+		{
+			img: "/assets/i/6-icon.png",
+			title: "Підприємницька діяльність"
+		},
+		{
+			img: "/assets/i/7-icon.png",
+			title: "Санітарне та епідемічне благополуччя, ветеринарна медицина"
+		},
+		{
+			img: "/assets/i/8-icon.png",
+			title: "Комунальне господарство"
+		}
+	]
 
 mixin header()
 	.topper
@@ -33,8 +46,7 @@ mixin header()
 
 mixin main()
 	.wrapper
-		-for (var x = 0; x < 8; x++)
+		each item in dataList
 			.block
-				img(src=list[x])
-				p #{pics[x]}
-
+				img(src= item.img)
+				p #{item.title}
